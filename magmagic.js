@@ -10,6 +10,7 @@ function makedatasets(makedata){
         let realname = (m.n);
         realname = realname.replace(/ #.*/,'');
         realname = realname.replace(/ \d\d\d?\d?-.*/,'');
+        realname = realname.replace(/ -.*/,'');
         mags.add(realname);
     });
     let types = new Set();
@@ -17,7 +18,7 @@ function makedatasets(makedata){
         types.add(m.t);
     });
     datatypes.types = Array.from(types).sort();
-    datatypes.mags = Array.from(mags).sort();
+    datatypes.products = Array.from(mags).sort();
     datatypes.groups = Array.from(groups).sort();
     let options = '';
     document.querySelector('#type').innerHTML += `
@@ -25,6 +26,54 @@ function makedatasets(makedata){
             ${datatypes.types.join('</option><option>')}
         </option>
     `;
+    document.querySelector('#numbers').innerHTML = `
+        Currently serving ${datatypes.products.length} <a href="index.html?products">products</a> of ${datatypes.types.length} types from ${datatypes.groups.length} <a href="index.html?groups">groups</a>. Overall ${magdata.mags.length} products.
+    `;
+    document.querySelector('#numbers').addEventListener('click',(ev) => {
+        hideall();
+        if (ev.target.nodeName === "A") {
+            let target = ev.target.href.split('?')[1];
+            let listdata = datatypes[target];
+            let html = '<li>';
+
+            listdata.forEach(item => {
+                html += `<a href="index.html?${target.substr(0,1)}=${item}">
+                ${item}</a></li><li>`;
+            });
+            html += '</li>';
+            document.querySelector('#'+target).classList.remove('hide');
+            document.querySelector('#'+target).innerHTML = html;
+            ev.preventDefault();
+        }
+    });
+    document.querySelector('#groups').addEventListener('click',(ev) => {
+        if (ev.target.nodeName === "A") {
+            let target = ev.target.href.split('?g=')[1];
+            target = decodeURIComponent(target);
+            document.querySelector('#group').value = target;
+            document.querySelector('#name').value = '';
+            document.querySelector('#type').value = "all"
+            populatetable(null);
+            ev.preventDefault();
+        }
+    });
+    document.querySelector('#products').addEventListener('click',(ev) => {
+        if (ev.target.nodeName === "A") {
+            let target = ev.target.href.split('?p=')[1];
+            target = decodeURIComponent(target);
+            document.querySelector('#name').value = target;
+            document.querySelector('#group').value = '';
+            document.querySelector('#type').value = "all"
+            populatetable(null);
+            ev.preventDefault();
+        }
+    });
+    function hideall() {
+        document.querySelector('#results').classList.add('hide');
+        document.querySelector('#resultstable').classList.add('hide');
+        document.querySelector('#groups').classList.add('hide');
+        document.querySelector('#products').classList.add('hide');
+    }
     function checkname(name) {
         let searchterm = document.querySelector('#name').value.toLowerCase();
         return (name.n.toLowerCase().match(new RegExp('^'+searchterm)));
@@ -38,6 +87,7 @@ function makedatasets(makedata){
         return (name.t === searchterm);
     }
     function populatetable(ev) {
+        hideall();
         let html = '';
         let dataset = magdata.mags;
         if(document.querySelector('#name').value!=='') {
@@ -64,7 +114,11 @@ function makedatasets(makedata){
             `;
         });
         document.querySelector('tbody').innerHTML = html;
-        ev.preventDefault();
+        document.querySelector('#resultstable').classList.remove('hide');
+        document.querySelector('#results').classList.remove('hide');
+        if (ev) {
+            ev.preventDefault();
+        }
     }
     document.querySelector('form').addEventListener('submit', populatetable);
     document.querySelector('#name').addEventListener('keyup', populatetable);

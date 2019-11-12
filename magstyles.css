@@ -1,6 +1,19 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+.hide {
+    display: none;
+}
+small {
+    background: #333;
+    color: #ccc;
+    padding: 5px;
+    margin: .5em 0;
+    display: block;
+}
+small a {
+    color: #fff;
+}
 table {
     margin: 1em 0;
     width: 100%;
@@ -24,4 +37,26 @@ tr:nth-child(even){
 }
 tr:nth-child(odd){
     background: #eee;
+}
+.cloud {
+    margin: 1em 0;
+    padding: 0;
+}
+.cloud a {
+    color: #000;
+    text-decoration: none;
+    display: inline-block;
+    padding: 2px 5px;
+    transition: 200ms;
+}
+.cloud a:hover {
+    background: lime;
+    color: black;
+    transform:scale(1.5);
+}
+.cloud li {
+    display: inline-block;
+}
+.cloud li:after {
+    content: ', ';
 }
