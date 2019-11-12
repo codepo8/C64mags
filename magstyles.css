@@ -1,0 +1,27 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+table {
+    margin: 1em 0;
+    width: 100%;
+    border-collapse: collapse;
+}
+table a {
+    color: #369;
+}
+table .photo a {
+    text-decoration: none;
+}
+th, td {
+    padding: 2px 5px;
+}
+th {
+    background: #369;
+    color: #fff;
+}
+tr:nth-child(even){
+    background: #ccc;
+}
+tr:nth-child(odd){
+    background: #eee;
+}
