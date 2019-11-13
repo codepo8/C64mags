@@ -14,13 +14,13 @@ fetch('data/mags.json').then(function(response) {
       ev.preventDefault();
       let t = ev.target;
       if (t.nodeName.toLowerCase() === 'a') {
-        console.log('x');
         if (t.parentNode.hasimg) {
           t.parentNode.lastChild.remove();
           t.parentNode.hasimg = false;
         } else {
           let i = document.createElement('img');
           i.setAttribute('src', t.href);
+          i.setAttribute('class', 'magshot');
           i.setAttribute('alt', t.innerText);
           t.parentNode.appendChild(i);
           t.parentNode.hasimg = true;

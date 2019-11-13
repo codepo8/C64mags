@@ -133,3 +133,7 @@ footer p {
     margin: 0;
     padding-bottom: .5em;
 }
+.magshot {
+    padding: 5px;
+    display: block;
+}
