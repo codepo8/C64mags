@@ -105,10 +105,10 @@ function makedatasets(makedata){
         dataset.forEach(m => {
             html += `
                 <tr>
-                    <td><a href="${m.l}">${m.n}</a></td>
+                    <td>${(m.i!=='')?'<a class="photo" href="'+m.i+'">📸</a>':''}
+                        <a href="${m.l}">${m.n}</a></td>
                     <td>${m.g}</td>
                     <td>${m.t}</td>
-                    <td class="photo">${(m.i!=='')?'<a href="'+m.i+'">📸</a>':''}</td>
                     <td>${m.c}</td>
                 </tr>                
             `;

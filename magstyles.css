@@ -1,29 +1,46 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background:#f8f8f8;
+    color: #333;
+}
+#content a {
+    color: #369;
+}
+.contentlist {
+    list-style: square;
+}
+.contentlist li {
+    line-height: 1.3;
+    padding-bottom: 5px;
 }
 .hide {
     display: none;
 }
+form {
+    background: #f8f8f8;
+    padding: 1em;
+}
 small {
     background: #333;
     color: #ccc;
-    padding: 5px;
-    margin: .5em 0;
+    padding: 5px 10px;
     display: block;
 }
 small a {
     color: #fff;
 }
+#results {
+    margin: 0 1em;
+}
 table {
-    margin: 1em 0;
-    width: 100%;
+    margin: 1em;
+    width: calc(100% - 2em);
     border-collapse: collapse;
 }
 table a {
     color: #369;
-}
-table .photo a {
-    text-decoration: none;
 }
 th, td {
     padding: 2px 5px;
@@ -39,7 +56,7 @@ tr:nth-child(odd){
     background: #eee;
 }
 .cloud {
-    margin: 1em 0;
+    margin: 1em;
     padding: 0;
 }
 .cloud a {
@@ -59,4 +76,34 @@ tr:nth-child(odd){
 }
 .cloud li:after {
     content: ', ';
+}
+#hero {
+    display: block;
+}
+#navigation {
+    background: #333;
+    margin: 0;
+    padding: 0 10px;
+}
+#navigation li {
+    display: inline-block;
+}
+#navigation a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    padding: 5px;
+}
+#navigation a:hover, #navigation strong {
+    display: block;
+    color: #000;
+    background:#f8f8f8;
+    padding: 5px;
+}
+#content {
+    padding: 1em 3em;
+}
+.photo {
+    float: right;
+    text-decoration: none;
 }

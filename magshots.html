@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wanted</title>
+    <link rel="stylesheet" href="magstyles.css">
+</head>
+<body>
+    <div id="nav"></div>
+    <div id="content"></div>
+
+    <script src="main.js"></script>
+    <script>
+fetch('mags.json').then(function(response) {
+    return response.text();
+  }).then(function(text) {
+    let magdata = JSON.parse(text);
+    let filtered = magdata.mags.filter(m => m.i!=='');
+    let html = '<ul class="contentlist">';
+    filtered.forEach(m => {
+        html += `<li><a href="${m.i}">${m.n} - ${m.t} by ${m.g}</a></li>`;
+    });
+    html += '<ul>';
+    document.querySelector('#content').innerHTML += html;
+});
+
+    </script>
+</body>
+</html>
