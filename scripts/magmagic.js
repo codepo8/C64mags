@@ -125,7 +125,7 @@ function makedatasets(makedata){
     document.querySelector('#group').addEventListener('keyup', populatetable);
     document.querySelector('#type').addEventListener('change', populatetable);
 }
-fetch('mags.json').then(function(response) {
+fetch('data/mags.json').then(function(response) {
     return response.text();
   }).then(function(text) {
     magdata = JSON.parse(text);

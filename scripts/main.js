@@ -36,6 +36,11 @@ if (document.querySelector('#content')){
     fetch(`content/${current}.html`).then(function(response) {
         return response.text();
     }).then(function(text) {
-        document.querySelector('#content').innerHTML = text;
+        document.querySelector('#content').innerHTML = text + document.querySelector('#content').innerHTML;
     });
 }
+fetch(`content/footer.html`).then(function(response) {
+    return response.text();
+}).then(function(text) {
+    document.querySelector('#footer').innerHTML = text;
+});

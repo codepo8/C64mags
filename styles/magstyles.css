@@ -2,16 +2,16 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    background:#f8f8f8;
-    color: #333;
+    background:#000;
+    color: #fff;
 }
 #content a {
     color: #369;
 }
-.contentlist {
+#content ul {
     list-style: square;
 }
-.contentlist li {
+#content li {
     line-height: 1.3;
     padding-bottom: 5px;
 }
@@ -19,8 +19,9 @@ body {
     display: none;
 }
 form {
-    background: #f8f8f8;
+    background: #369;
     padding: 1em;
+    color: #fff;
 }
 small {
     background: #333;
@@ -28,15 +29,21 @@ small {
     padding: 5px 10px;
     display: block;
 }
-small a {
+label {
+    padding: .5em;
+}
+label:first-of-type {
+    padding-left: 0;
+}
+#content small a {
     color: #fff;
 }
 #results {
     margin: 0 1em;
 }
 table {
-    margin: 1em;
-    width: calc(100% - 2em);
+    margin: 1em 0;
+    width: 100%;
     border-collapse: collapse;
 }
 table a {
@@ -66,9 +73,9 @@ tr:nth-child(odd){
     padding: 2px 5px;
     transition: 200ms;
 }
-.cloud a:hover {
-    background: lime;
-    color: black;
+#content .cloud a:hover {
+    background: #369;
+    color: #fff;
     transform:scale(1.5);
 }
 .cloud li {
@@ -92,18 +99,36 @@ tr:nth-child(odd){
     color: #fff;
     text-decoration: none;
     display: block;
-    padding: 5px;
+    padding: 5px 10px;
 }
 #navigation a:hover, #navigation strong {
     display: block;
     color: #000;
     background:#f8f8f8;
-    padding: 5px;
+    padding: 5px 10px;
 }
 #content {
     padding: 1em 3em;
+    background: #f8f8f8;
+    color:#333;
 }
 .photo {
     float: right;
     text-decoration: none;
+}
+
+footer {
+    display: block;
+    background: black;
+    color: #999;
+    text-align: center;
+    padding: 1em 1em 2em 1em;
+    font-size: .8em;
+}
+footer a {
+    color: #ccc;
+}
+footer p {
+    margin: 0;
+    padding-bottom: .5em;
 }
