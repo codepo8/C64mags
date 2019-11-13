@@ -35,7 +35,7 @@ label {
 label:first-of-type {
     padding-left: 0;
 }
-#content small a {
+small a {
     color: #fff;
 }
 #results {
@@ -73,7 +73,7 @@ tr:nth-child(odd){
     padding: 2px 5px;
     transition: 200ms;
 }
-#content .cloud a:hover {
+.cloud a:hover {
     background: #369;
     color: #fff;
     transform:scale(1.5);
@@ -107,11 +107,12 @@ tr:nth-child(odd){
     background:#f8f8f8;
     padding: 5px 10px;
 }
-#content {
+#content, #magsearch {
     padding: 1em 3em;
     background: #f8f8f8;
     color:#333;
 }
+
 .photo {
     float: right;
     text-decoration: none;

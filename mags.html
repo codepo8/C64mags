@@ -9,31 +9,33 @@
 <body>
     <div id="nav"></div>
     <div id="content">
-    <form>
-        <label for="name">Magazine Name</label>
-        <input type="text" id="name">
-        <label for="group">Group</label>
-        <input type="text" id="group">
-        <label for="type">Type</label>
-        <select id="type"><option>all</option></select>
-        <input type="submit" value="Show me!">
-   </form>
-   <small id="numbers"></small>
-   <div id="results"></div>
-    <table id="resultstable" class="hide">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Group</th>
-                <th>Type</th>
-                <th>Comment</th>
-            </tr>
-        </thead>
-        <tbody>
-        </tbody>
-    </table> 
-    <ul id="groups" class="cloud"></ul>
-    <ul id="products" class="cloud"></ul>
+    </div>
+    <div id="magsearch">
+        <form>
+            <label for="name">Magazine Name</label>
+            <input type="text" id="name">
+            <label for="group">Group</label>
+            <input type="text" id="group">
+            <label for="type">Type</label>
+            <select id="type"><option>all</option></select>
+            <input type="submit" value="Show me!">
+        </form>
+        <small id="numbers"></small>
+        <div id="results"></div>
+        <table id="resultstable" class="hide">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Group</th>
+                    <th>Type</th>
+                    <th>Comment</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table> 
+        <ul id="groups" class="cloud"></ul>
+        <ul id="products" class="cloud"></ul>
     </div>
     <div id="footer"></div>
     <script src="scripts/magmagic.js"></script>
