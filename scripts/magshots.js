@@ -5,7 +5,8 @@ fetch('data/mags.json').then(function(response) {
     let filtered = magdata.mags.filter(m => m.i!=='');
     let html = '<ul id="shots" class="contentlist">';
     filtered.forEach(m => {
-        html += `<li><a href="http://c64.rulez.org/onslaught/archive/${m.i}">${m.n} - ${m.t} by ${m.g}</a></li>`;
+//      html += `<li><a href="http://c64.rulez.org/onslaught/archive/${m.i}">${m.n} - ${m.t} by ${m.g}</a></li>`;
+        html += `<li><a href="magshots/${m.i.replace(/.*\//,'')}">${m.n} - ${m.t} by ${m.g}</a></li>`;
     });
     html += '<ul>';
     document.querySelector('#content').innerHTML += html;
