@@ -7,9 +7,8 @@
     <link rel="stylesheet" href="styles/magstyles.css">
 </head>
 <body>
-    <div id="nav"></div>
-    <div id="content">
-    </div>
+    <div id="nav"><?php include('nav.php');?></div>
+    <div id="content"><?php include('content.php');?></div>
     <div id="magsearch">
         <form>
             <label for="name">Magazine Name</label>
@@ -37,8 +36,7 @@
         <ul id="groups" class="cloud"></ul>
         <ul id="products" class="cloud"></ul>
     </div>
-    <div id="footer"></div>
+    <div id="footer"><?php include('footer.php');?></div>
     <script src="scripts/magmagic.js"></script>
-    <script src="scripts/main.js"></script>
 </body>
 </html>
