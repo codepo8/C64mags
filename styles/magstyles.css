@@ -2,11 +2,11 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    background:#000;
-    color: #fff;
+    background:#ccc;
+    color: #333;
 }
 #content a {
-    color: #369;
+    color: #69c;
 }
 #content ul {
     list-style: square;
@@ -19,7 +19,7 @@ body {
     display: none;
 }
 form {
-    background: #369;
+    background: #69c;
     padding: 1em;
     color: #fff;
 }
@@ -47,20 +47,20 @@ table {
     border-collapse: collapse;
 }
 table a {
-    color: #369;
+    color: #69c;
 }
 th, td {
     padding: 2px 5px;
 }
 th {
-    background: #369;
+    background: #69c;
     color: #fff;
 }
 tr:nth-child(even){
-    background: #ccc;
+    background: #333;
 }
 tr:nth-child(odd){
-    background: #eee;
+    background: #111;
 }
 .cloud {
     margin: 1em;
@@ -74,7 +74,7 @@ tr:nth-child(odd){
     transition: 200ms;
 }
 .cloud a:hover {
-    background: #369;
+    background: #69c;
     color: #fff;
     transform:scale(1.5);
 }
@@ -84,11 +84,18 @@ tr:nth-child(odd){
 .cloud li:after {
     content: ', ';
 }
+#herocontainer {
+    background: #000;
+    position: relative;
+}
 #hero {
     display: block;
+    transform: translateY(-50%);
+    position: absolute;
+    top: 50%;        
 }
 #navigation {
-    background: #333;
+    background: #6f4f26;
     margin: 0;
     padding: 0 10px;
 }
@@ -104,13 +111,13 @@ tr:nth-child(odd){
 #navigation a:hover, #navigation strong {
     display: block;
     color: #000;
-    background:#f8f8f8;
+    background:#cdd6a5;
     padding: 5px 10px;
 }
 #content, #magsearch {
     padding: 1em 3em;
-    background: #f8f8f8;
-    color:#333;
+    background: rgb(32, 32, 32);
+    color:#ccc;
 }
 
 .photo {
