@@ -84,8 +84,15 @@ tr:nth-child(odd){
 .cloud li:after {
     content: ', ';
 }
+#herocontainer {
+    background: #000;
+    position: relative;
+}
 #hero {
     display: block;
+    transform: translateY(-50%);
+    position: absolute;
+    top: 50%;        
 }
 #navigation {
     background: #333;

@@ -11,10 +11,12 @@ const navitems = {
 }
 let urlitems = document.location.href.split('/');
 let current = urlitems[urlitems.length-1].replace('.html','');
+
 let num = parseInt((12  * Math.random() + 1) ,10);
 num = num < 10 ? '0' + num: num;
-let navhtml = `<img id="hero" title="click for other logo" src="logos/scenemagazines${num}.png" width="100%" alt="scenemags">`;
+let navhtml = `<div id="herocontainer"><img id="hero" title="click for other logo" src="logos/scenemagazines${num}.png" width="100%" alt="scenemags"></div>`;
 navhtml += '<ul id="navigation">';
+
 for(n in navitems) {
     if (n === current) {
         navhtml += `<li><strong>${navitems[n]}</strong></li>`;
@@ -26,13 +28,17 @@ navhtml += '</ul>';
 
 document.querySelector('#nav').innerHTML = navhtml;
 
+const hero = document.querySelector('#herocontainer');
+hero.style.height = window.innerWidth * 0.18 + 'px'
+
 document.querySelector('#hero').addEventListener('click',(ev) => {
     let num = parseInt((12  * Math.random() + 1) ,10);
     num = num < 10 ? '0' + num: num;
     document.querySelector('#hero').src = `logos/scenemagazines${num}.png`;
 });
 
-if (document.querySelector('#content')){
+if (document.querySelector('#content')) {
+    if (current === '') { current = "index"; }
     fetch(`content/${current}.html`).then(function(response) {
         return response.text();
     }).then(function(text) {
