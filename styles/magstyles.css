@@ -66,23 +66,28 @@ tr:nth-child(odd){
     margin: 1em;
     padding: 0;
 }
-.cloud a {
-    color: #000;
+#products.cloud a, #groups.cloud a, #content .cloud a {
+    color: #69c;
     text-decoration: none;
     display: inline-block;
-    padding: 2px 5px;
+    padding: 2px 0 2px 5px;
     transition: 200ms;
 }
-.cloud a:hover {
+#products.cloud a:hover, #groups.cloud a:hover, #content .cloud a:hover {
     background: #69c;
     color: #fff;
+    display: inline-block;
+    padding: 2px 0 2px 5px;
     transform:scale(1.5);
 }
 .cloud li {
-    display: inline-block;
+    display: inline;
 }
 .cloud li:after {
-    content: ', ';
+    content: ',';
+}
+.cloud li:last-of-type:after {
+    content: '';
 }
 #herocontainer {
     background: #000;

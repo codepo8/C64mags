@@ -34,13 +34,14 @@ function makedatasets(makedata){
         if (ev.target.nodeName === "A") {
             let target = ev.target.href.split('?')[1];
             let listdata = datatypes[target];
-            let html = '<li>';
-
+            let html = '';
             listdata.forEach(item => {
-                html += `<a href="index.html?${target.substr(0,1)}=${item}">
-                ${item}</a></li><li>`;
+                html +=`<li>
+                    <a href="index.html?${target.substr(0,1)}=${item}">
+                        ${item}
+                    </a>
+                </li>`;
             });
-            html += '</li>';
             document.querySelector('#'+target).classList.remove('hide');
             document.querySelector('#'+target).innerHTML = html;
             ev.preventDefault();
