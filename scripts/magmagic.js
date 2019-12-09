@@ -106,7 +106,7 @@ function makedatasets(makedata){
             html += `
                 <tr>
                     <td>${(m.i!=='')?'<a class="photo" href="http://c64.rulez.org/onslaught/archive/'+m.i+'">📸</a>':''}
-                        <a href="${m.l}">${m.n}</a></td>
+                        <a href="ftp://ftp.padua.org/pub/c64/Magazines/mags.c64.org/${m.l}">${m.n}</a></td>
                     <td>${m.g}</td>
                     <td>${m.t}</td>
                     <td>${m.c}</td>

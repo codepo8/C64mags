@@ -1,4 +1,4 @@
-<?php 
+<?php ob_start("ob_gzhandler");
 header('Content-Type: application/json');
 function clean($str){
     $str = str_replace("/\n/g",'',$str);
@@ -30,3 +30,6 @@ foreach ($rows as $rs) {
 }
 $json .= join($lines,",\n").'],"build":"'.date("Y-m-d h:i:sa").'"}';
 echo $json;
+echo $_GET['packed'];
+ob_flush();
+?>

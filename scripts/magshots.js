@@ -1,4 +1,4 @@
-fetch('data/mags.json').then(function(response) {
+fetch('createjson.php').then(function(response) {
     return response.text();
   }).then(function(text) {
     let magdata = JSON.parse(text);
