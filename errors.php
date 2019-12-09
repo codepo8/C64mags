@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="styles/magstyles.css">
 </head>
 <body>
-<div id="nav"><?php include('nav.php');?></div>
+    <div id="nav"><?php include('nav.php');?></div>
     <div id="content"><?php include('content.php');?></div>
     <div id="footer"><?php include('footer.php');?></div>
 </body>
